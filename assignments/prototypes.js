@@ -149,7 +149,7 @@ function Villian(attrs) {
 
 Villian.prototype = Object.create(Humanoid.prototype);
 
-Villian.prototype.villainAttack = function () {
+Villian.prototype.villainAttack = function attack() {
   console.log(`${this.name} hits ${Math.floor(Math.random() * this.attack)} times.`);
 };
 
@@ -160,7 +160,7 @@ function Hero(attrs) {
 
 Hero.prototype = Object.create(Humanoid.prototype);
 
-Hero.prototype.heroAttack = function () {
+Hero.prototype.heroAttack = function attack() {
   console.log(`${this.name} hits ${Math.floor(Math.random() * 20) + Math.floor(this.attack/3)} times.`); //random number from 1 to 5
 };
 
@@ -200,5 +200,5 @@ const wizard = new Hero({
   attack: 25
 });
 
-console.log(gnome.villainAttack());
-console.log(wizard.heroAttack());
+console.log(gnome.villainAttack(mage));
+console.log(wizard.heroAttack(archer));
